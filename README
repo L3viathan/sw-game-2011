@@ -1,0 +1,128 @@
+########################################
+# Documentation file for Star Wars VII #
+#  A game made for the Python 1 course #
+########################################
+
+0. Installation
+
+The game requires the installation of
+some dependencies:
+-	Python 3.2
+-	Pygame for Python 3 (!)
+When these requirements are met, the
+execution of the .py-file should
+work. If for some reasons it is not
+possible to install Pygame for Python 3
+under your operating system/distribution,
+you may just comment out all lines that
+have to do with the sound. In this version,
+they should be lines 16 and 283 to 287.
+Commenting out in Python works by
+putting a # sign at the beginning of the
+line.
+If for any reasons the game still doesn't
+work, feel free to contact me under this
+email adress:
+jober@coli.uni-saarland.de
+
+
+1. Introduction
+
+This game was a task in my programming
+course "Python 1" in the WS 2011/2012 at
+the Saarland University in Saarbrücken.
+The task was to write a simple text-based
+console game, without further demands.
+
+
+2. Story
+
+Long ago, in a galaxy far, far away...
+You are a spaceship that finds itself
+in the opening crawl of the Star Wars
+movies. You find yourself confronted with
+the task not to crash into any letters.
+
+
+2. Aim & Controls
+
+The aim of the game is to survive as
+long as possible. To achieve this, you
+are presented a number of keyboard
+controls: Using the "A" and "D" keys,
+you can move to the left and right. The
+"S" key performs a hyperjump to the
+centre of the screen.
+To pause the game you can press "P" (as
+to unpause), and finally, to cancel the
+game and loose all progress you may use
+the Escape key.
+The game is counting how far you come:
+With each line that appears on the screen,
+your score is incremented. As time
+passes by, the speed of the game will
+increase, up to a speed considered im-
+possible, when the score reaches 100.
+After you crash in a letter, you will see
+a highscore list, and - if your score was
+in the top 10 - you will be asked to
+state your name; it will be put in the
+highscore file.
+
+4. Structure
+The code is structured in 5 parts:
+	i.	Imports
+	ii.	Global variables
+	iii.Function definitions
+	iv.	Main code before game loop
+	v.	Main code after loop
+i)	In this section, the four dependencies
+	are imported: The random library for
+	randomizing the gameplay, the time
+	library for the sleep command, which
+	is used in the intro, the tkinter
+	library for handling the keyboard
+	events and finally the mixer module
+	from the pygame library for the
+	background music.
+ii)	All global variables are declared here.
+	Some of them are "settings" for the
+	gameplay, for example the initial
+	time delay, others are used as memory,
+	such as the counter or the list of
+	obstacle strings. The rest are two
+	very long strings that are needed in
+	the very beginning.
+iii)As the code is procedural, most
+	functionality is outsorced in functions.
+	These are declared in this part.
+iv)	This part initializes the Tkinter
+	events, displays the intro, reads the
+	text crawl file and starts the
+	background music. Finally, the step()
+	function is called time delayed and
+	the mainloop function of Tkinter is
+	executed. This mainloop is responsible
+	for handling the keyboard events. As
+	the function step() calls itself
+	(although not recursively, but with
+	help of Tkinter), the gameplay continues
+	everytime the delay passes. When a key
+	is pressed and it is one of the keys
+	relevant to the game, a certain command
+	is executed, for example the
+	incrementation of the player position.
+v)	When the player looses the game, the
+	score of the player is compared with
+	the ones in the highscore file. If it
+	is bigger, he is asked to enter a name.
+	This name and his score is then inserted
+	into the highscore array and file at the
+	correct position. Finally, the highscore
+	list is printed.
+
+5. Licensing
+The whole game, including the music, is
+licensed under a WTFPL license, if applicable.
+For details, refer to the LICENSE file in
+this directory.
